@@ -29,11 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   private getQuestion() {
-    let myarray: any = [];
     questions.forEach((question) => {
-      myarray.push(
-        `https://jotajoti2022.web.app/?team=${question.team}&post=${question.post}`
-      );
       if (question.team === this.team && question.post === this.post) {
         this.question = question.question;
         this.correctAnswer = question.answer;
@@ -41,7 +37,6 @@ export class AppComponent implements OnInit {
         this.coordinaat = question.coordinaat;
       }
     });
-    console.log(myarray);
   }
 
   public validateAnswer() {
